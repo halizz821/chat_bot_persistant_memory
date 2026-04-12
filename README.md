@@ -8,6 +8,8 @@ Developed by **Hamed Alizadeh**.
 ![Backend API](https://img.shields.io/badge/Backend-FastAPI-009688?style=flat-square&logo=fastapi)
 ![Agent Framework](https://img.shields.io/badge/Agent-LangGraph-white?style=flat-square)
 
+![Nexus UI Interface](./frontend/public/screenshot.png)
+
 ---
 
 ## 🚀 Key Features
