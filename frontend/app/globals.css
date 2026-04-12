@@ -1,0 +1,46 @@
+:root {
+  --bg-color: #060b13;
+  --panel-bg: rgba(12, 18, 32, 0.45);
+  --border-color: rgba(0, 255, 170, 0.15);
+  --accent-green: #00ffaa;
+  --accent-blue: #00b3ff;
+  --text-main: #e2e8f0;
+  --text-dim: #94a3b8;
+  --user-msg: rgba(0, 179, 255, 0.15);
+  --ai-msg: rgba(0, 255, 170, 0.1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  background-image: 
+    radial-gradient(circle at 15% 85%, rgba(0, 179, 255, 0.1), transparent 30%),
+    radial-gradient(circle at 85% 15%, rgba(0, 255, 170, 0.08), transparent 30%);
+  color: var(--text-main);
+  font-family: 'Inter', -apple-system, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 170, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 170, 0.5);
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}

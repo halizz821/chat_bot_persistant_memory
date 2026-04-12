@@ -1,0 +1,344 @@
+.container {
+  display: flex;
+  height: 100vh;
+  padding: 2rem;
+  gap: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column-reverse;
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
+.chatPanel,
+.archPanel {
+  background: var(--panel-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 0 32px rgba(0, 255, 170, 0.02);
+  position: relative;
+  overflow: hidden;
+}
+
+.chatPanel {
+  flex: 5;
+}
+
+.archPanel {
+  flex: 3;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow-y: auto;
+}
+
+.panelSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 170, 0.2), transparent);
+  margin: 0.5rem 0;
+  flex-shrink: 0;
+}
+
+.header {
+  padding: 1.5rem 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.badge {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  background: rgba(0, 255, 170, 0.1);
+  color: var(--accent-green);
+  border: 1px solid rgba(0, 255, 170, 0.3);
+}
+
+.messagesContainer {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.messageWrapper {
+  display: flex;
+  width: 100%;
+}
+
+.messageWrapper.user {
+  justify-content: flex-end;
+}
+
+.messageWrapper.ai {
+  justify-content: flex-start;
+}
+
+.bubble {
+  max-width: 75%;
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  line-height: 1.5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.user .bubble {
+  background: var(--user-msg);
+  color: #fff;
+  border: 1px solid rgba(0, 179, 255, 0.3);
+  border-bottom-right-radius: 4px;
+}
+
+.ai .bubble {
+  background: var(--ai-msg);
+  color: var(--text-main);
+  border: 1px solid rgba(0, 255, 170, 0.2);
+  border-bottom-left-radius: 4px;
+}
+
+.inputForm {
+  padding: 1.5rem 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  gap: 1rem;
+}
+
+.inputBox {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.inputBox:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.sendButton {
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+  border: none;
+  border-radius: 12px;
+  padding: 0 2rem;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.sendButton:hover {
+  opacity: 0.9;
+}
+
+.sendButton:active {
+  transform: scale(0.98);
+}
+
+.sendButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.archTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.archSub {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.graphContainer {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px dashed rgba(0, 255, 170, 0.3);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: 250px;
+  margin-bottom: 0.5rem;
+}
+
+.graphImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  filter: hue-rotate(180deg) brightness(1.2);
+}
+
+.dots {
+  display: inline-block;
+  animation: ellipsis 1.5s infinite;
+}
+
+@keyframes ellipsis {
+  0% {
+    content: ".";
+  }
+
+  33% {
+    content: "..";
+  }
+
+  66% {
+    content: "...";
+  }
+
+  100% {
+    content: "";
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.techStack {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  flex: 1;
+  overflow-y: auto;
+}
+
+.techItem {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+}
+
+.techItem:hover {
+  background: rgba(255, 255, 255, 0.02);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 8px;
+  border-bottom-color: transparent;
+}
+
+.techItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.techLabel {
+  display: flex;
+  align-items: center;
+}
+
+.logoGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.techLogo {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.techEmoji {
+  font-size: 1.2rem;
+}
+
+.invertLogo {
+  filter: invert(1) opacity(0.9);
+}
+
+.techLabel strong {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.techValue {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+}
+
+.toolBadge {
+  display: inline-block;
+  font-size: 0.75rem;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--accent-green);
+  color: var(--accent-green);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}

@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pytest
+httpx
+python-multipart
+streamlit
+langgraph
+langchain-groq
+langchain-core
+tavily-python
+python-dotenv
